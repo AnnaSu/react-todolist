@@ -13,6 +13,7 @@ export default class TodoList extends Component {
 							<TodoListItem
 								key={`todolist_${index}`}
 								index={index}
+								id={item.id}
 								name={item.name}
 								isComplete={item.isComplete}
 								deleteTodoList={deleteTodoList}
