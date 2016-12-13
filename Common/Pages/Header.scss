@@ -1,0 +1,58 @@
+.header {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	padding: 0;
+	margin: 0;
+	background-color: #707477;
+}
+
+.logo {
+	margin-left: 60px;
+	vertical-align: middle;
+}
+
+.unfinish {
+	position: absolute;
+	top: 0;
+	right: 40px;
+	color: white;
+
+	.count {
+		margin-right: 10px;
+		vertical-align: middle;
+		font-size: 24px;
+		font-weight: bold;
+		color: #42F496;
+	}
+}
+
+.add {
+	width: 30px;
+	height: 30px;
+	margin-left: 60px;
+	vertical-align: sub;
+}
+
+.input-content {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	background-color: white;
+
+	.input {
+		width: 70%;
+	    height: 98px;
+	    padding-left: 20px;
+	    font-size: 24px;
+	    border: 0;
+
+	    &:focus {
+	    	outline: none;
+	    }
+	}
+}
+
+
+

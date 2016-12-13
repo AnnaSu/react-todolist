@@ -1,0 +1,49 @@
+.list {
+	padding: 25px 0;
+	border: 1px solid #dddedf;
+}
+
+.finish {
+	width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-left: 60px;
+	background-image: url("../images/btn_check.png");
+	cursor: pointer;
+}
+
+.del {
+	position: absolute;
+	right: 60px;
+	width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+	background-image: url("../images/btn_del.png");
+	cursor: pointer;
+}
+
+.unfinish {
+	width: 25px;
+	height: 25px;
+	margin-left: 60px;
+	margin-right: 20px;
+	display: inline-block;
+	border: 2px solid #42F496;
+	border-radius: 50%;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.finishName {
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: line-through;
+}
+
+.unfinishName {
+	display: inline-block;
+	vertical-align: middle;
+}
