@@ -2,6 +2,11 @@ const initialState = [];
 const ADD_TODO = 'ADD_TODO';
 const DELETE_TODO = 'DELETE_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
+const RECEIVE_TODO_LIST = 'RECEIVE_TODO_LIST';
+
+export const getTodoList = () => dispatch => fetch('http://localhost:3000/todolist')
+	.then(res => res.json())
+	.then(json => dispatch({ type: RECEIVE_TODO_LIST, payload: json }))
 
 export function addTodoList (value) {
 	return {
@@ -30,6 +35,8 @@ export function toggleTodoList (index) {
 
 export default function todolist (state = initialState, action) {
 	switch (action.type) {
+	case RECEIVE_TODO_LIST:
+		return action.payload;
 	case ADD_TODO:
 		state.push(action.payload);
 		return [...state];

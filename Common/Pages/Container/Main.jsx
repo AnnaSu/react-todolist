@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Header from '../Component/Header.jsx';
 import TodoListContainer from './TodoListContainer.jsx';
+import { getTodoList } from '../../Reducers/todolist.js';
 
-export default class Main extends Component {
+class Main extends Component {
+	componentDidMount() {
+		const { getTodoList } = this.props;
+		getTodoList();
+	}
+	
 	render() {
 		return (
 			<div>
@@ -12,3 +19,5 @@ export default class Main extends Component {
 		);
 	}
 }
+
+export default connect(null, { getTodoList })(Main)
