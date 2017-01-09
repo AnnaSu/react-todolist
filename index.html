@@ -7,6 +7,14 @@
 </head>
 <body>
 	<div id="root"></div>
+	
+	<script>
+		(function() {
+			if('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('service-worker.js');
+			}
+		})();
+	</script>
 	<script src="./assets/vendor.bundle.js"></script>
 	<script src="./assets/bundle.js"></script>
 </body>

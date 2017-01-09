@@ -3,6 +3,7 @@ var path = require('path');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var rucksack = require('rucksack-css');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
     devtool: '#eval-source-map',
@@ -62,7 +63,20 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
-        })
+        }),
+        new SWPrecacheWebpackPlugin(
+            {
+                cacheId: 'todo-list',
+                filename: 'service-worker.js',
+                filepath: path.resolve(__dirname, './service-worker.js'),
+                maximumFileSizeToCacheInBytes: 4194304,
+                staticFileGlobs: ['index.html', './assets/*.css', './assets/*.js'],
+                runtimeCaching: [{
+                    handler: 'networkFirst',
+                    urlPattern: /^http:\/\/localhost:3000/,
+                }],
+            }
+        )
     ],
     devServer: {
         contentBase: './',
